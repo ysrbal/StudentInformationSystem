@@ -11,10 +11,16 @@ public class InformationSystem {
         Course kimya = new Course("Kimya", "102", "KMY");
         kimya.addTeacher(t3);
 
-        Student s1 = new Student("Ali", "101", "5",turkce,mat,kimya);
+        Student s1 = new Student("Ali", "123", "5",turkce,mat,kimya);
         s1.addBulkExamNote(87,65,78);
         s1.addBulkVerbalNote(80,75,88);
         s1.isPass();
+
+
+        Student s2 = new Student("Ahmet", "4125", "5", turkce,mat,kimya);
+        s2.addBulkExamNote(40,45,30);
+        s2.addBulkVerbalNote(10,25,60);
+        s2.isPass();
     }
 }
 

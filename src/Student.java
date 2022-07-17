@@ -48,21 +48,27 @@ public class Student {
         double c1Average = (this.c1.note * 0.7) + (this.c1.verbalNote * .3);
         double c2Average = (this.c2.note * 0.8) + (this.c2.verbalNote * .2);
         double c3Average = (this.c3.note * 0.75) + (this.c3.verbalNote * .25);
-        double GPA = (c1Average + c2Average + c3Average) / 3;
-        this.average = GPA;
+        this.average = (c1Average + c2Average + c3Average) / 3;
     }
 
     void isPass() {
+
+        this.isPass = isCheckPass();
         printNote();
-        if (this.average >= 70) {
+        if (this.isPass) {
             System.out.println("TEBRIKLER SINIFI GECTINIZ.");
-            this.isPass = true;
         } else {
+
             System.out.println("SINIFI GECEMEDINIZ.");
-            this.isPass = false;
         }
 
     }
+
+    boolean isCheckPass() {
+        calcAverage();
+        return this.average > 55;
+    }
+
 
     void printNote() {
         System.out.println("=========================");
